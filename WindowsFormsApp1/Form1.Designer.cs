@@ -65,6 +65,7 @@
             this.textBox_vvod.Location = new System.Drawing.Point(12, 12);
             this.textBox_vvod.Multiline = true;
             this.textBox_vvod.Name = "textBox_vvod";
+            this.textBox_vvod.ReadOnly = true;
             this.textBox_vvod.Size = new System.Drawing.Size(336, 29);
             this.textBox_vvod.TabIndex = 0;
             // 
