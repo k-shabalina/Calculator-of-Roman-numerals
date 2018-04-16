@@ -32,16 +32,72 @@ namespace WindowsFormsApp1
         public RimNumber(int ArabN)
         {
             this.ArabN = ArabN;
-            RimN = GetRimNumber;
+            RimN = GetRimNumber(this.ArabN);
         }
-        int GetArabNumber(RimNumber rim)
+        int GetArabNumber(string rim)
         {
-            int ar;
-            return ar;
+            int ar=0;
+            char[] mass = rim.ToCharArray();
+            for (int i = 0; i < mass.Length; i++)
+            {
+                if (mass[i] == 'M')
+                    ar += 1000;
+                else if (mass[i] == 'D')
+                    ar += 500;
+                else if ((mass[i] == 'C') && (mass[i + 1] == 'M'))
+                    ar += 900;
+                else if ((mass[i] == 'C') && (mass[i + 1] == 'D'))
+                    ar += 400;
+                else if (mass[i] == 'C')
+                    ar += 100;
+                else if (mass[i] == 'L')
+                    ar += 50;
+                else if ((mass[i] == 'X') && (mass[i + 1] == 'C'))
+                    ar += 90;
+                else if ((mass[i] == 'X') && (mass[i + 1] == 'L'))
+                    ar += 40;
+                else if (mass[i] == 'X')
+                    ar += 10;
+                else if (mass[i] == 'V')
+                    ar += 5;
+                else if ((mass[i] == 'I') && (mass[i + 1] == 'X'))
+                    ar += 9;
+                else if ((mass[i] == 'I') && (mass[i + 1] == 'X'))
+                    ar += 4;
+                else if (mass[i] == 'I')
+                    ar += 1;
+            }
+                    return ar;
         }
-        RimNumber GetRimNumber(int ar)
+        string GetRimNumber(int ar)
         {
-            RimNumber rim;
+            string rim = "";
+            char[] mass = (Convert.ToString(ar).ToCharArray());
+            for (int i=mass.Length; i>0; i--)
+            {
+                if (i == 1)
+                    if (mass[i] == '1')
+                        rim += 'I';
+                    else if (mass[i] == '2')
+                        rim += "II";
+                    else if (mass[i] == '3')
+                        rim += "III";
+                    else if (mass[i] == '4')
+                        rim += "IV";
+                    else if (mass[i] == '5')
+                        rim += "V";
+                    else if (mass[i] == '6')
+                        rim += "VI";
+                    else if (mass[i] == '7')
+                        rim += "VII";
+                    else if (mass[i] == '8')
+                        rim += "VIII";
+                    else if (mass[i] == '9')
+                        rim += "IX";
+                else
+                       
+
+            }                
             return rim;
         }
     }
