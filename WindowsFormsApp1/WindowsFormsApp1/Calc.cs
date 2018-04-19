@@ -45,6 +45,7 @@ namespace WindowsFormsApp1
         public string ArabToRim(int arab)
         {
             return RimNumber.ChangeArabToRim(arab);
+
         }
     }
 }
