@@ -9,6 +9,9 @@ namespace WindowsFormsApp1
     class Calc
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
         public string Plus(string A, string B)
         {
             RimNumber rim1 = new RimNumber(A);
@@ -46,8 +49,13 @@ namespace WindowsFormsApp1
         public string ArabToRim(int arab)
         {
             return RimNumber.ChangeArabToRim(arab);
+<<<<<<< HEAD
 
 =======
+=======
+        }
+
+>>>>>>> master
         public static void GetFunction(string _rim1, string _rim2, string _znak) //для математических действий
         {
             string rim1 = _rim1;
