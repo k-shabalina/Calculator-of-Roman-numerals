@@ -120,6 +120,7 @@ namespace WindowsFormsApp1
                 if (textBox_vvod.Text != "" && textBox_vvod.Text != null)
                 {
                     rim2 = textBox_vvod.Text;
+                    Calc.GetFunction(rim1, rim2, znak);
                 }
             }
         }
