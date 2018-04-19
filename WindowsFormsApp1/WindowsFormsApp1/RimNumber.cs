@@ -186,12 +186,12 @@ return rim.ChangeRimToArab;
             RimNumber C = new RimNumber(A.ArabN % B.ArabN);
             return C.RimN;
         }
-        public int ChangeRimToArab(string rim)
+        public static int ChangeRimToArab(string rim)
         {
             RimNumber A = new RimNumber(rim);
             return A.ArabN;
         }
-        public string ChangeArabToRim(int arab)
+        public static string ChangeArabToRim(int arab)
         {
             RimNumber A = new RimNumber(arab);
             return A.RimN;
