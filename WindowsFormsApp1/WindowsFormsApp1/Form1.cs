@@ -408,9 +408,9 @@ namespace WindowsFormsApp1
             {
                 operation = false;
                 _rim1 = textBox_vvod.Text;
-                _znak = "->";
+                _znak = null;
                 textBox_vvod.Text = null;
-                Calc.GetFunction(_rim1, _znak);
+                label_result.Text = Convert.ToString(Calc.RimToArab(_rim1));
             }
             else
             {
@@ -457,9 +457,9 @@ namespace WindowsFormsApp1
             {
                 operation = false;
                 _rim1 = textBox_vvod.Text;
-                _znak = "<-";
-                Calc.GetFunction(_rim1, _znak);
+                _znak = null;
                 textBox_vvod.Text = null;
+                label_result.Text = Calc.ArabToRim(Convert.ToInt32(_rim1));
             }
             else
             {
@@ -474,10 +474,30 @@ namespace WindowsFormsApp1
                 if (textBox_vvod.Text != "" && textBox_vvod.Text != null)
                 {
                     _rim2 = textBox_vvod.Text;
-                    Calc.GetFunction(_rim1, _rim2, _znak);
                     operation = false;
                     textBox_vvod.Text = null;
+                    if (_znak == "+")
+                    {
+                        label_result.Text = Calc.Plus(_rim1, _rim2);
+                    }
+                    if (_znak == "-")
+                    {
+                        label_result.Text = Calc.Minus(_rim1, _rim2);
+                    }
+                    if (_znak == "*")
+                    {
+                        label_result.Text = Calc.Multiply(_rim1, _rim2);
+                    }
+                    if (_znak == "/")
+                    {
+                        label_result.Text = Calc.Divide(_rim1, _rim2);
+                    }
+                    if (_znak == "%")
+                    {
+                        label_result.Text = Calc.Percent(_rim1, _rim2);
+                    }
                 }
+                _znak = null;
             }
             else
             {
