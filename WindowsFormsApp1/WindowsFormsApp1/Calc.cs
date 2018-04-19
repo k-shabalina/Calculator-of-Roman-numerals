@@ -8,11 +8,17 @@ namespace WindowsFormsApp1
 {
     class Calc
     {
-        public static void GetFunction(string rim1, string rim2, string znak)
+        public static void GetFunction(string _rim1, string _rim2, string _znak) //для математических действий
         {
-            string _rim1 = rim1;
-            string _rim2 = rim2;
-            string _znak = znak;
+            string rim1 = _rim1;
+            string rim2 = _rim2;
+            string znak = _znak;
+        }
+
+        public static void GetFunction(string _rim1, string _znak) // для перевода из арабских в римские и наоборот
+        {
+            string rim1 = _rim1;
+            string znak = _znak;
         }
     }
 }

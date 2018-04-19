@@ -12,10 +12,16 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        string rim1;
-        string rim2;
-        string znak;
+        string _rim1;
+        string _rim2;
+        string _znak;
         bool operation = false;
+        bool chisla = true;
+
+        public void GetResult(string result)
+        {
+            label_result.Text = result;
+        }
 
         public Form1()
         {
@@ -59,58 +65,406 @@ namespace WindowsFormsApp1
 
         private void button_plus_Click(object sender, EventArgs e)
         {
-            operation = true;
-            rim1 = textBox_vvod.Text;
-            znak = "+";
-            textBox_vvod.Text = "";
+            chisla = true;
+            for (int i = 0; i < textBox_vvod.Text.Length; i++)
+            {
+                if (Convert.ToString(textBox_vvod.Text[i]) == "0")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "1")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "2")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "3")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "4")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "5")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "6")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "7")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "8")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "9")
+                {
+                    chisla = false;
+                }
+            }
+            if (chisla == true)
+            {
+                operation = true;
+                _rim1 = textBox_vvod.Text;
+                _znak = "+";
+                textBox_vvod.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Данная операция недоступная для арабских чисел","Ошибка",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
         }
 
         private void button_minus_Click(object sender, EventArgs e)
         {
-            operation = true;
-            rim1 = textBox_vvod.Text;
-            znak = "-";
-            textBox_vvod.Text = "";
+            chisla = true;
+            for (int i = 0; i < textBox_vvod.Text.Length; i++)
+            {
+                if (Convert.ToString(textBox_vvod.Text[i]) == "0")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "1")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "2")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "3")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "4")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "5")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "6")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "7")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "8")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "9")
+                {
+                    chisla = false;
+                }
+            }
+            if (chisla == true)
+            {
+                operation = true;
+                _rim1 = textBox_vvod.Text;
+                _znak = "-";
+                textBox_vvod.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Данная операция недоступная для арабских чисел", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button_umnozhit_Click(object sender, EventArgs e)
         {
-            operation = true;
-            rim1 = textBox_vvod.Text;
-            znak = "*";
-            textBox_vvod.Text = "";
+            chisla = true;
+            for (int i = 0; i < textBox_vvod.Text.Length; i++)
+            {
+                if (Convert.ToString(textBox_vvod.Text[i]) == "0")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "1")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "2")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "3")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "4")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "5")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "6")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "7")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "8")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "9")
+                {
+                    chisla = false;
+                }
+            }
+            if (chisla == true)
+            {
+                operation = true;
+                _rim1 = textBox_vvod.Text;
+                _znak = "*";
+                textBox_vvod.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Данная операция недоступная для арабских чисел", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button_div_Click(object sender, EventArgs e)
         {
-            operation = true;
-            rim1 = textBox_vvod.Text;
-            znak = "/";
-            textBox_vvod.Text = "";
+            chisla = true;
+            for (int i = 0; i < textBox_vvod.Text.Length; i++)
+            {
+                if (Convert.ToString(textBox_vvod.Text[i]) == "0")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "1")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "2")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "3")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "4")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "5")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "6")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "7")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "8")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "9")
+                {
+                    chisla = false;
+                }
+            }
+            if (chisla == true)
+            {
+                operation = true;
+                _rim1 = textBox_vvod.Text;
+                _znak = "/";
+                textBox_vvod.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Данная операция недоступная для арабских чисел", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button_mod_Click(object sender, EventArgs e)
         {
-            operation = true;
-            rim1 = textBox_vvod.Text;
-            znak = "%";
-            textBox_vvod.Text = "";
+            chisla = true;
+            for (int i = 0; i < textBox_vvod.Text.Length; i++)
+            {
+                if (Convert.ToString(textBox_vvod.Text[i]) == "0")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "1")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "2")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "3")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "4")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "5")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "6")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "7")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "8")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "9")
+                {
+                    chisla = false;
+                }
+            }
+            if (chisla == true)
+            {
+                operation = true;
+                _rim1 = textBox_vvod.Text;
+                _znak = "%";
+                textBox_vvod.Text = null;
+            }
+            else
+            {
+                MessageBox.Show("Данная операция недоступная для арабских чисел", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button1_to_10_Click(object sender, EventArgs e)
         {
-            operation = true;
-            rim1 = textBox_vvod.Text;
-            znak = "->";
-            textBox_vvod.Text = "";
+            chisla = true;
+            for (int i = 0; i < textBox_vvod.Text.Length; i++)
+            {
+                if (Convert.ToString(textBox_vvod.Text[i]) == "0")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "1")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "2")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "3")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "4")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "5")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "6")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "7")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "8")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "9")
+                {
+                    chisla = false;
+                }
+            }
+            if (chisla == true)
+            {
+                operation = false;
+                _rim1 = textBox_vvod.Text;
+                _znak = "->";
+                textBox_vvod.Text = null;
+                Calc.GetFunction(_rim1, _znak);
+            }
+            else
+            {
+                MessageBox.Show("Данная операция недоступная для арабских чисел", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void button_toX_Click(object sender, EventArgs e)
         {
-            operation = true;
-            rim1 = textBox_vvod.Text;
-            znak = "<-";
-            textBox_vvod.Text = "";
+            chisla = true;
+            for (int i = 0; i < textBox_vvod.Text.Length; i++)
+            {
+                if (Convert.ToString(textBox_vvod.Text[i]) == "I")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "X")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "V")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "L")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "M")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "C")
+                {
+                    chisla = false;
+                }
+                if (Convert.ToString(textBox_vvod.Text[i]) == "D")
+                {
+                    chisla = false;
+                }
+            }
+            if (chisla == true)
+            {
+                operation = false;
+                _rim1 = textBox_vvod.Text;
+                _znak = "<-";
+                Calc.GetFunction(_rim1, _znak);
+                textBox_vvod.Text = null;
+            }
+            else
+            {
+                MessageBox.Show("Данная операция недоступная для римских чисел", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button_ravno_Click(object sender, EventArgs e)
@@ -119,31 +473,40 @@ namespace WindowsFormsApp1
             {
                 if (textBox_vvod.Text != "" && textBox_vvod.Text != null)
                 {
-                    rim2 = textBox_vvod.Text;
-                    Calc.GetFunction(rim1, rim2, znak);
+                    _rim2 = textBox_vvod.Text;
+                    Calc.GetFunction(_rim1, _rim2, _znak);
+                    operation = false;
+                    textBox_vvod.Text = null;
                 }
             }
+            else
+            {
+                MessageBox.Show("Некорректная операция", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+    
 
         private void button_clean_Click(object sender, EventArgs e)
         {
-            rim1 = null;
-            rim2 = null;
+            textBox_vvod.Text = null;
+            _rim1 = null;
+            _rim2 = null;
             operation = false;
         }
 
         private void button_ce_Click(object sender, EventArgs e)
         {
-            if (rim2 == null)
+            textBox_vvod.Text = null;
+            if (_rim2 == null)
             {
-                if (rim1 != null)
+                if (_rim1 != null)
                 {
-                    rim1 = null;
+                    _rim1 = null;
                 }
             }
             else
             {
-                rim2 = null;
+                _rim2 = null;
             }
         }
 
