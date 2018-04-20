@@ -453,7 +453,7 @@ namespace WindowsFormsApp1
                     chisla = false;
                 }
             }
-            if (chisla == true)
+            if ((chisla == true)&&(textBox_vvod.Text!=""))
             {
                 operation = false;
                 _rim1 = textBox_vvod.Text;
@@ -468,7 +468,7 @@ namespace WindowsFormsApp1
         }
 
         private void button_ravno_Click(object sender, EventArgs e)
-        {
+        {                
             if (operation == true)
             {
                 if (textBox_vvod.Text != "" && textBox_vvod.Text != null)
@@ -482,11 +482,21 @@ namespace WindowsFormsApp1
                     }
                     if (_znak == "-")
                     {
+                        RimNumber c = new RimNumber(_rim1);
+                        RimNumber d = new RimNumber(_rim2);
+                        if(c.ArabN<d.ArabN)
+                            MessageBox.Show("Результат отрицательный", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        else
                         label_result.Text = Calc.Minus(_rim1, _rim2);
                     }
                     if (_znak == "*")
                     {
-                        label_result.Text = Calc.Multiply(_rim1, _rim2);
+                        RimNumber c = new RimNumber(_rim1);
+                        RimNumber d = new RimNumber(_rim2);
+                        if (c.ArabN * d.ArabN>3999)
+                            MessageBox.Show("Результат превышает максимальное римское число", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        else
+                            label_result.Text = Calc.Multiply(_rim1, _rim2);
                     }
                     if (_znak == "/")
                     {
