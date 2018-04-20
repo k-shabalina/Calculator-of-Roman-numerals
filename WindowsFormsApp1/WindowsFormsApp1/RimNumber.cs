@@ -48,32 +48,68 @@ return rim.ChangeRimToArab;
             char[] mass = rim.ToCharArray();
             for (int i = 0; i < mass.Length; i++)
             {
-                if (mass[i] == 'M')
-                    ar += 1000;
-                else if (mass[i] == 'D')
-                    ar += 500;
-                else if ((mass[i] == 'C') && (mass[i + 1] == 'M'))
-                    ar += 900;
-                else if ((mass[i] == 'C') && (mass[i + 1] == 'D'))
-                    ar += 400;
-                else if (mass[i] == 'C')
-                    ar += 100;
-                else if (mass[i] == 'L')
-                    ar += 50;
-                else if ((mass[i] == 'X') && (mass[i + 1] == 'C'))
-                    ar += 90;
-                else if ((mass[i] == 'X') && (mass[i + 1] == 'L'))
-                    ar += 40;
-                else if (mass[i] == 'X')
-                    ar += 10;
-                else if (mass[i] == 'V')
-                    ar += 5;
-                else if ((mass[i] == 'I') && (mass[i + 1] == 'X'))
-                    ar += 9;
-                else if ((mass[i] == 'I') && (mass[i + 1] == 'X'))
-                    ar += 4;
-                else if (mass[i] == 'I')
-                    ar += 1;
+                if (i != mass.Length - 1)
+                {
+                    if (mass[i] == 'M')
+                        ar += 1000;
+                    else if (mass[i] == 'D')
+                        ar += 500;
+                    else if ((mass[i] == 'C') && (mass[i + 1] == 'M'))
+                    {
+                        ar += 900;
+                        i++;
+                    }
+                    else if ((mass[i] == 'C') && (mass[i + 1] == 'D'))
+                        ar += 400;
+                    else if (mass[i] == 'C')
+                        ar += 100;
+                    else if (mass[i] == 'L')
+                        ar += 50;
+                    else if ((mass[i] == 'X') && (mass[i + 1] == 'C'))
+                    {
+                        ar += 90;
+                        i++;
+                    }
+                    else if ((mass[i] == 'X') && (mass[i + 1] == 'L'))
+                    {
+                        ar += 40;
+                        i++;
+                    }
+                    else if (mass[i] == 'X')
+                        ar += 10;
+                    else if (mass[i] == 'V')
+                        ar += 5;
+                    else if ((mass[i] == 'I') && (mass[i + 1] == 'X'))
+                    {
+                        ar += 9;
+                        i++;
+                    }
+                    else if ((mass[i] == 'I') && (mass[i + 1] == 'V'))
+                    {
+                        ar += 4;
+                        i++;
+                    }
+                    else if (mass[i] == 'I')
+                        ar += 1;
+                }
+                else
+                {
+                    if (mass[i] == 'M')
+                        ar += 1000;
+                    else if (mass[i] == 'D')
+                        ar += 500;                    
+                    else if (mass[i] == 'C')
+                        ar += 100;
+                    else if (mass[i] == 'L')
+                        ar += 50;     
+                    else if (mass[i] == 'X')
+                        ar += 10;
+                    else if (mass[i] == 'V')
+                        ar += 5;                   
+                    else if (mass[i] == 'I')
+                        ar += 1;
+                }
+
             }
             return ar;
         }
@@ -81,83 +117,218 @@ return rim.ChangeRimToArab;
         {
             string rim = "";
             char[] mass = (Convert.ToString(ar).ToCharArray());
-            for (int i = mass.Length; i > 0; i--)
+            if (mass.Length == 1)
             {
-                if (i == 1)
+                if (mass[0] == '1')
+                    rim += 'I';
+                else if (mass[0] == '2')
+                    rim += "II";
+                else if (mass[0] == '3')
+                    rim += "III";
+                else if (mass[0] == '4')
+                    rim += "IV";
+                else if (mass[0] == '5')
+                    rim += "V";
+                else if (mass[0] == '6')
+                    rim += "VI";
+                else if (mass[0] == '7')
+                    rim += "VII";
+                else if (mass[0] == '8')
+                    rim += "VIII";
+                else if (mass[0] == '9')
+                    rim += "IX";
+            }
+            else if (mass.Length == 2)
+            {
+                for (int i =0; i<mass.Length; i++)
+                    if (i == 0)
+                    {
+                        if (mass[i] == '1')
+                            rim += 'X';
+                        else if (mass[i] == '2')
+                            rim += "XX";
+                        else if (mass[i] == '3')
+                            rim += "XXX";
+                        else if (mass[i] == '4')
+                            rim += "XL";
+                        else if (mass[i] == '5')
+                            rim += "L";
+                        else if (mass[i] == '6')
+                            rim += "LX";
+                        else if (mass[i] == '7')
+                            rim += "LXX";
+                        else if (mass[i] == '8')
+                            rim += "LXXX";
+                        else if (mass[i] == '9')
+                            rim += "XC";
+                    }
+                    else
+                  if (i == 1)
+                    {
+                        if (mass[i] == '1')
+                            rim += 'I';
+                        else if (mass[i] == '2')
+                            rim += "II";
+                        else if (mass[i] == '3')
+                            rim += "III";
+                        else if (mass[i] == '4')
+                            rim += "IV";
+                        else if (mass[i] == '5')
+                            rim += "V";
+                        else if (mass[i] == '6')
+                            rim += "VI";
+                        else if (mass[i] == '7')
+                            rim += "VII";
+                        else if (mass[i] == '8')
+                            rim += "VIII";
+                        else if (mass[i] == '9')
+                            rim += "IX";
+                    }
+            }
+            else if (mass.Length == 3)
+            {
+                for (int i = 0; i < mass.Length; i++)
                 {
-                    if (mass[i] == '1')
-                        rim += 'I';
-                    else if (mass[i] == '2')
-                        rim += "II";
-                    else if (mass[i] == '3')
-                        rim += "III";
-                    else if (mass[i] == '4')
-                        rim += "IV";
-                    else if (mass[i] == '5')
-                        rim += "V";
-                    else if (mass[i] == '6')
-                        rim += "VI";
-                    else if (mass[i] == '7')
-                        rim += "VII";
-                    else if (mass[i] == '8')
-                        rim += "VIII";
-                    else if (mass[i] == '9')
-                        rim += "IX";
+                    if (i == 0)
+                    {
+                        if (mass[i] == '1')
+                            rim += 'C';
+                        else if (mass[i] == '2')
+                            rim += "CC";
+                        else if (mass[i] == '3')
+                            rim += "CCC";
+                        else if (mass[i] == '4')
+                            rim += "CD";
+                        else if (mass[i] == '5')
+                            rim += "D";
+                        else if (mass[i] == '6')
+                            rim += "DC";
+                        else if (mass[i] == '7')
+                            rim += "DCC";
+                        else if (mass[i] == '8')
+                            rim += "DCCC";
+                        else if (mass[i] == '9')
+                            rim += "CM";
+                    }
+                    else if (i == 1)
+                    {
+                        if (mass[i] == '1')
+                            rim += 'X';
+                        else if (mass[i] == '2')
+                            rim += "XX";
+                        else if (mass[i] == '3')
+                            rim += "XXX";
+                        else if (mass[i] == '4')
+                            rim += "XL";
+                        else if (mass[i] == '5')
+                            rim += "L";
+                        else if (mass[i] == '6')
+                            rim += "LX";
+                        else if (mass[i] == '7')
+                            rim += "LXX";
+                        else if (mass[i] == '8')
+                            rim += "LXXX";
+                        else if (mass[i] == '9')
+                            rim += "XC";
+                    }
+                    else if (i == 2)
+                    {
+                        if (mass[i] == '1')
+                            rim += 'I';
+                        else if (mass[i] == '2')
+                            rim += "II";
+                        else if (mass[i] == '3')
+                            rim += "III";
+                        else if (mass[i] == '4')
+                            rim += "IV";
+                        else if (mass[i] == '5')
+                            rim += "V";
+                        else if (mass[i] == '6')
+                            rim += "VI";
+                        else if (mass[i] == '7')
+                            rim += "VII";
+                        else if (mass[i] == '8')
+                            rim += "VIII";
+                        else if (mass[i] == '9')
+                            rim += "IX";
+                    }
                 }
-                else
-                    if (i == 2)
-                {
-                    if (mass[i] == '1')
-                        rim += 'X';
-                    else if (mass[i] == '2')
-                        rim += "XX";
-                    else if (mass[i] == '3')
-                        rim += "XXX";
-                    else if (mass[i] == '4')
-                        rim += "XL";
-                    else if (mass[i] == '5')
-                        rim += "L";
-                    else if (mass[i] == '6')
-                        rim += "LX";
-                    else if (mass[i] == '7')
-                        rim += "LXX";
-                    else if (mass[i] == '8')
-                        rim += "LXXX";
-                    else if (mass[i] == '9')
-                        rim += "XC";
-                }
-                else
-                    if (i == 3)
-                {
-                    if (mass[i] == '1')
-                        rim += 'C';
-                    else if (mass[i] == '2')
-                        rim += "CC";
-                    else if (mass[i] == '3')
-                        rim += "CCC";
-                    else if (mass[i] == '4')
-                        rim += "CD";
-                    else if (mass[i] == '5')
-                        rim += "D";
-                    else if (mass[i] == '6')
-                        rim += "DC";
-                    else if (mass[i] == '7')
-                        rim += "DCC";
-                    else if (mass[i] == '8')
-                        rim += "DCCC";
-                    else if (mass[i] == '9')
-                        rim += "CM";
-                }
-                else
-                    if (i == 4)
-                {
-                    if (mass[i] == '1')
-                        rim += 'M';
-                    else if (mass[i] == '2')
-                        rim += "MM";
-                    else if (mass[i] == '3')
-                        rim += "MMM";
-                }
+            }
+            else if (mass.Length == 4)
+            {
+                for (int i = 0; i < mass.Length; i++)
+                    if (i == 0)
+                    {
+                        if (mass[i] == '1')
+                            rim += 'M';
+                        else if (mass[i] == '2')
+                            rim += "MM";
+                        else if (mass[i] == '3')
+                            rim += "MMM";
+                    }
+                    else if (i == 1)
+                    {
+                        if (mass[i] == '1')
+                            rim += 'C';
+                        else if (mass[i] == '2')
+                            rim += "CC";
+                        else if (mass[i] == '3')
+                            rim += "CCC";
+                        else if (mass[i] == '4')
+                            rim += "CD";
+                        else if (mass[i] == '5')
+                            rim += "D";
+                        else if (mass[i] == '6')
+                            rim += "DC";
+                        else if (mass[i] == '7')
+                            rim += "DCC";
+                        else if (mass[i] == '8')
+                            rim += "DCCC";
+                        else if (mass[i] == '9')
+                            rim += "CM";
+                    }
+                    else if (i == 2)
+                    {
+                        if (mass[i] == '1')
+                            rim += 'X';
+                        else if (mass[i] == '2')
+                            rim += "XX";
+                        else if (mass[i] == '3')
+                            rim += "XXX";
+                        else if (mass[i] == '4')
+                            rim += "XL";
+                        else if (mass[i] == '5')
+                            rim += "L";
+                        else if (mass[i] == '6')
+                            rim += "LX";
+                        else if (mass[i] == '7')
+                            rim += "LXX";
+                        else if (mass[i] == '8')
+                            rim += "LXXX";
+                        else if (mass[i] == '9')
+                            rim += "XC";
+                    }
+                    else if (i == 3)
+                    {
+                        if (mass[i] == '1')
+                            rim += 'I';
+                        else if (mass[i] == '2')
+                            rim += "II";
+                        else if (mass[i] == '3')
+                            rim += "III";
+                        else if (mass[i] == '4')
+                            rim += "IV";
+                        else if (mass[i] == '5')
+                            rim += "V";
+                        else if (mass[i] == '6')
+                            rim += "VI";
+                        else if (mass[i] == '7')
+                            rim += "VII";
+                        else if (mass[i] == '8')
+                            rim += "VIII";
+                        else if (mass[i] == '9')
+                            rim += "IX";
+                    }                    
             }
             return rim;
         }
